@@ -3,7 +3,7 @@ import random
 
 
 def main():
-    print('Answer "yes" if the number is even, otherwise answer "no". ')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     game_cycle()
 
 
@@ -11,9 +11,10 @@ if __name__ == '__main__':
     main()
 
 
-def is_number_even(number):
+def is_number_prime(number):
     global result
-    if (number % 2 == 0):
+    prime_numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+    if number in prime_numbers:
         result = 'yes'
     else:
         result = 'no'
@@ -22,10 +23,10 @@ def is_number_even(number):
 def game_cycle():
     i = 0
     while i <= 3:
-        number = random.randint(1, 20)
+        number = random.randint(2, 50)
         print("Question: ", number)
         answer = prompt.string("Your answer: ")
-        is_number_even(number)
+        is_number_prime(number)
         if result == answer:
             print("Correct!")
             i = i + 1
