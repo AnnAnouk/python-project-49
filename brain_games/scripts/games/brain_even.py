@@ -20,6 +20,7 @@ def is_number_even(number):
 
 
 def game_cycle():
+    global answer
     i = 0
     while i <= 3:
         number = random.randint(1, 20)
